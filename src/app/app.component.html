@@ -1,0 +1,11 @@
+<div>
+  <h1>Expense Service Response: /expenses/user</h1>
+  @if (expenses$ | async; as expenses) {
+    <pre>{{ expenses | json }}</pre>
+  } @else {
+    <p>Error :(</p>
+  }
+  <button (click)="logout()">Logout</button>
+</div>
+
+<router-outlet/>
