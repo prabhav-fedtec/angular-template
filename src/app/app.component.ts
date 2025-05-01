@@ -22,7 +22,7 @@ export class AppComponent {
   }
 
   ngOnInit(): void {
-    this.expenses$ = this.httpClient.get<any>('/api/expenses', {responseType: 'json', withCredentials: true})
+    this.expenses$ = this.httpClient.get<any>('/api/expenses/user', {responseType: 'json', withCredentials: true})
   }
 
   logout(): void {
