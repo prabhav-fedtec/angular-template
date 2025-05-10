@@ -3,8 +3,6 @@ export type Expense = {
     userId: string;
     firstName: string;
     lastName: string;
-    middleInitial: string;
-    birthDate: Date;
     category: string;
     amount: number;
     location: string;

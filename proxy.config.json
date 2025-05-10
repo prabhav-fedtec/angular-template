@@ -1,0 +1,11 @@
+{
+  "/api/expense": {
+    "target": "http://localhost:7000",
+    "pathRewrite": {
+      "^/api/expense": "/expense"
+    },
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+}
