@@ -1,29 +1,15 @@
-import { AsyncPipe, JsonPipe } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { first, map, Observable } from 'rxjs';
 import { AuthService } from './services/auth.service';
+import { GovBannerComponent } from "./gov-banner/gov-banner.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, AsyncPipe, JsonPipe],
+  imports: [RouterOutlet, GovBannerComponent],
   template: `
-    <div>
-      @if (authenticated$ | async; as authenticated) {
-        <h1>Expense Service Response: /expenses/user</h1>
-        @if (expenses$ | async; as expenses) {
-          <pre>{{ expenses | json }}</pre>
-        } @else {
-          <p>Error :(</p>
-        }
-        <button (click)="logout()">Logout</button>
-      } @else {
-        <a href="/oauth2/authorization/default">
-          <button>Sign In</button>
-        </a>
-      }
-    </div>
+    <gov-banner/>
 
     <router-outlet/>
   `
@@ -31,19 +17,11 @@ import { AuthService } from './services/auth.service';
 export class AppComponent {
   private httpClient: HttpClient;
 
-  title = 'angular-template';
-
-  expenses$!: Observable<any>;
-
   authenticated$: Observable<boolean>;
 
   constructor(httpClient: HttpClient, authService: AuthService) {
     this.httpClient = httpClient;
     this.authenticated$ = authService.authenticated$;
-  }
-
-  ngOnInit(): void {
-    this.expenses$ = this.httpClient.get<any>('/api/expenses/user', {responseType: 'json', withCredentials: true})
   }
 
   logout(): void {

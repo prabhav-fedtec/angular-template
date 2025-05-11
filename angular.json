@@ -27,9 +27,13 @@
               }
             ],
             "styles": [
+              "node_modules/@uswds/uswds/dist/css/uswds.min.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/@uswds/uswds/dist/js/uswds.min.js",
+              "node_modules/@uswds/uswds/dist/js/uswds-init.min.js"
+            ]
           },
           "configurations": {
             "production": {
