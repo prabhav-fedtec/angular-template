@@ -39,7 +39,8 @@ export class AppHeaderComponent {
   baseNavItems: UsaHeaderPrimaryLink[] = [
     {
       text: 'Current section', 
-      id: 'home', 
+      id: 'home',
+      path: '',
       children: [
         {
           text: 'Navigation Link 0',
@@ -73,7 +74,7 @@ export class AppHeaderComponent {
     this.authenticated$ = authService.authenticated$;
   }
 
-  linkEvent = ($event: any) => {
+  linkEvent = ($event: UsaNavigationLink<any>) => {
     console.log($event);
   }
 }
