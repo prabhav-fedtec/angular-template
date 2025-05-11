@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { first, map, Observable } from 'rxjs';
 import { AuthService } from './services/auth.service';
-import { GovBannerComponent } from "./gov-banner/gov-banner.component";
+import { GovBannerComponent } from "./components/gov-banner.component";
 
 @Component({
   selector: 'app-root',
