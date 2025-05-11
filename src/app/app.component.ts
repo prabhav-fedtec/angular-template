@@ -5,7 +5,7 @@ import { AppHeaderComponent } from "./components/app-header/app-header.component
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, GovBannerComponent, AppHeaderComponent],
+  imports: [GovBannerComponent, AppHeaderComponent, RouterOutlet],
   template: `
     <gov-banner/>
     <app-header/>

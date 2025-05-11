@@ -23,10 +23,7 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public",
-                "ignore": [
-                  "dev-token.json"
-                ]
+                "input": "public"
               }
             ],
             "styles": [
@@ -40,6 +37,15 @@
           },
           "configurations": {
             "production": {
+              "assets": [
+                {
+                  "glob": "**/*",
+                  "input": "public",
+                  "ignore": [
+                    "dev-token.json"
+                  ]
+                }
+              ],
               "budgets": [
                 {
                   "type": "initial",
