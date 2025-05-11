@@ -23,7 +23,10 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public"
+                "input": "public",
+                "ignore": [
+                  "dev-token.json"
+                ]
               }
             ],
             "styles": [
